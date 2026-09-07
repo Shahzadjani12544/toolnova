@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator - ToolNova</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    margin:0;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#222;
+}
+
+p{
+    color:#666;
+}
+
+input{
+    width:100%;
+    box-sizing:border-box;
+    padding:13px;
+    margin:8px 0 15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    background:#f1f5f9;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Percentage Calculator</h1>
+
+<p>Calculate percentages quickly and easily.</p>
+
+<label>What is X% of Y?</label>
+
+<input type="number" id="percent" placeholder="Enter percentage (e.g. 20)">
+
+<input type="number" id="number" placeholder="Enter number (e.g. 500)">
+
+<button onclick="calculate()">Calculate</button>
+
+<div class="result" id="result">
+Result will appear here
+</div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+    const percent = parseFloat(document.getElementById("percent").value);
+    const number = parseFloat(document.getElementById("number").value);
+    const result = document.getElementById("result");
+
+    if(isNaN(percent) || isNaN(number)){
+        result.textContent = "Please enter both numbers.";
+        return;
+    }
+
+    const answer = (percent / 100) * number;
+
+    result.textContent = percent + "% of " + number + " = " + answer;
+}
+
+</script>
+
+</body>
+</html>
