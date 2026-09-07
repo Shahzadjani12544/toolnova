@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Contact ToolNova - Get in touch with the ToolNova team.">
-
 <title>Contact Us - ToolNova</title>
+
+<meta name="description" content="Contact ToolNova for questions, suggestions, feedback and support.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/contact.html">
 
 <style>
 *{
@@ -25,12 +29,17 @@ header{
     background:#111827;
     color:white;
     text-align:center;
-    padding:25px 20px;
+    padding:25px 15px;
 }
 
 .logo{
-    font-size:30px;
+    font-size:32px;
     font-weight:bold;
+}
+
+.tagline{
+    color:#d1d5db;
+    margin-top:5px;
 }
 
 .container{
@@ -76,20 +85,33 @@ button:hover{
     background:#1d4ed8;
 }
 
-.note{
-    background:#f1f5f9;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:20px;
-    color:#555;
-}
-
 footer{
+    margin-top:40px;
     background:#111827;
     color:#d1d5db;
     text-align:center;
-    padding:25px 20px;
-    margin-top:40px;
+    padding:30px 15px;
+}
+
+.footer-links{
+    margin-top:12px;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:600px){
+    .footer-links a{
+        display:block;
+        margin:8px;
+    }
 }
 </style>
 </head>
@@ -98,53 +120,67 @@ footer{
 
 <header>
     <div class="logo">🚀 ToolNova</div>
+    <div class="tagline">Free Tools for Everyone</div>
 </header>
 
-<div class="container">
+<main class="container">
 
-<h1>Contact Us</h1>
+    <h1>Contact Us</h1>
 
-<p>
-Have a question, suggestion, or found a problem with one of our tools?
-We would love to hear from you.
-</p>
+    <p>
+        Have a question, suggestion, feedback, or found a problem with
+        one of our tools? Send us a message and we will do our best to help.
+    </p>
 
-<div class="note">
-Please use the form below to send us your message.
-</div>
+    <form action="https://formsubmit.co/shahzadshoukat743@gmail.com" method="POST">
 
-<form action="https://formsubmit.co/" method="POST">
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
 
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required
->
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+        >
 
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required
->
+        <textarea
+            name="message"
+            placeholder="Write your message here..."
+            required
+        ></textarea>
 
-<textarea
-name="message"
-placeholder="Write your message here..."
-required
-></textarea>
+        <input type="hidden" name="_subject" value="New ToolNova Contact Message">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
 
-<button type="submit">
-Send Message
-</button>
+        <button type="submit">Send Message</button>
 
-</form>
+    </form>
 
-</div>
+</main>
 
 <footer>
-    © 2026 ToolNova. All rights reserved.
+
+    <div>
+        🚀 ToolNova — Free Tools for Everyone
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        © 2026 ToolNova. All rights reserved.
+    </div>
+
 </footer>
 
 </body>
