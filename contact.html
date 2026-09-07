@@ -7,7 +7,6 @@
 <title>Contact Us - ToolNova</title>
 
 <meta name="description" content="Contact ToolNova for questions, suggestions, feedback and support.">
-
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/contact.html">
@@ -55,33 +54,29 @@ h1{
     margin-top:0;
 }
 
-input,
-textarea{
-    width:100%;
-    padding:13px;
-    margin:8px 0 15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:16px;
-    font-family:Arial,sans-serif;
+.email-box{
+    background:#f1f5f9;
+    padding:20px;
+    border-radius:10px;
+    margin:25px 0;
 }
 
-textarea{
-    height:160px;
-    resize:vertical;
+.email{
+    font-weight:bold;
+    word-break:break-all;
 }
 
-button{
+.button{
+    display:inline-block;
     padding:12px 22px;
-    border:none;
-    border-radius:8px;
     background:#2563eb;
     color:white;
-    font-size:16px;
-    cursor:pointer;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
 }
 
-button:hover{
+.button:hover{
     background:#1d4ed8;
 }
 
@@ -128,39 +123,29 @@ footer{
     <h1>Contact Us</h1>
 
     <p>
-        Have a question, suggestion, feedback, or found a problem with
-        one of our tools? Send us a message and we will do our best to help.
+        Have a question, suggestion, feedback, or found a problem
+        with one of our tools? We would love to hear from you.
     </p>
 
-    <form action="https://formsubmit.co/shahzadshoukat743@gmail.com" method="POST">
+    <div class="email-box">
+        <strong>Email:</strong>
 
-        <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
+        <div class="email">
+            shahzadshoukat743@gmail.com
+        </div>
+
+        <a
+            class="button"
+            href="mailto:shahzadshoukat743@gmail.com?subject=ToolNova%20Contact"
         >
+            Send Us an Email
+        </a>
+    </div>
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-        >
-
-        <textarea
-            name="message"
-            placeholder="Write your message here..."
-            required
-        ></textarea>
-
-        <input type="hidden" name="_subject" value="New ToolNova Contact Message">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="hidden" name="_template" value="table">
-
-        <button type="submit">Send Message</button>
-
-    </form>
+    <p>
+        When contacting us, please include enough information about
+        your question or problem so we can understand how to help.
+    </p>
 
 </main>
 
