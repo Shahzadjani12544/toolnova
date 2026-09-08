@@ -1,160 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Word & Character Counter - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
+  <title>Word Counter & Character Counter Online Free | ToolNova</title>
 
-.container{
-    max-width:600px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+  <meta name="description" content="Count words, characters, sentences, and characters without spaces with ToolNova's free online word counter. Fast, simple, and easy to use.">
 
-h1{
-    color:#222;
-}
+  <meta name="keywords" content="word counter, character counter, word count tool, character count, online word counter, free word counter, sentence counter">
 
-p{
-    color:#666;
-}
+  <meta name="author" content="ToolNova">
+  <meta name="robots" content="index, follow">
 
-textarea{
-    width:100%;
-    height:220px;
-    box-sizing:border-box;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    resize:vertical;
-    font-size:16px;
-    outline:none;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/counter.html">
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:20px;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.stat{
-    background:#f1f5f9;
-    padding:15px;
-    border-radius:10px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
 
-.number{
-    display:block;
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:5px;
-}
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-.label{
-    color:#666;
-}
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
 
-button{
-    margin-top:20px;
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+    header p {
+      margin: 8px 0 0;
+      color: #d1d5db;
+    }
 
-button:hover{
-    background:#1d4ed8;
-}
-</style>
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .tool-box {
+      text-align: center;
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 250px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 16px;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: #f3f4f6;
+      padding: 15px 10px;
+      border-radius: 10px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      font-size: 13px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .content-box {
+      margin-top: 25px;
+    }
+
+    .content-box h2 {
+      color: #111827;
+    }
+
+    .content-box h3 {
+      margin-top: 22px;
+    }
+
+    .content-box p,
+    .content-box li {
+      line-height: 1.7;
+    }
+
+    .tools-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tools-links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 20px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+  </style>
 </head>
 
 <body>
 
+<header>
+
+  <h1>🚀 ToolNova</h1>
+
+  <p>Free Tools for Everyone</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
 <div class="container">
 
-<h1>Word & Character Counter</h1>
+  <section class="tool-box">
 
-<p>Type or paste your text below.</p>
+    <h2>📝 Word & Character Counter</h2>
 
-<textarea id="text" placeholder="Start typing here..." oninput="countText()"></textarea>
+    <p>
+      Count words, characters, sentences, and characters without spaces
+      instantly with this free online counter.
+    </p>
 
-<div class="stats">
+    <textarea
+      id="textInput"
+      placeholder="Type or paste your text here..."
+      oninput="countText()"
+    ></textarea>
 
-<div class="stat">
-<span class="number" id="words">0</span>
-<span class="label">Words</span>
+    <div class="stats">
+
+      <div class="stat">
+        <strong id="wordCount">0</strong>
+        <span>Words</span>
+      </div>
+
+      <div class="stat">
+        <strong id="characterCount">0</strong>
+        <span>Characters</span>
+      </div>
+
+      <div class="stat">
+        <strong id="noSpaceCount">0</strong>
+        <span>Characters Without Spaces</span>
+      </div>
+
+      <div class="stat">
+        <strong id="sentenceCount">0</strong>
+        <span>Sentences</span>
+      </div>
+
+    </div>
+
+    <button onclick="clearText()">
+      Clear Text
+    </button>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>Free Online Word Counter</h2>
+
+    <p>
+      ToolNova's free word counter helps you quickly count the number
+      of words and characters in your text. It is useful for students,
+      writers, bloggers, social media users, and anyone who needs to
+      check the length of written content.
+    </p>
+
+    <h3>What Can This Tool Count?</h3>
+
+    <ul>
+      <li>Total number of words</li>
+      <li>Total number of characters</li>
+      <li>Characters without spaces</li>
+      <li>Number of sentences</li>
+    </ul>
+
+    <h3>How to Use the Word Counter</h3>
+
+    <ol>
+      <li>Type or paste your text into the text box.</li>
+      <li>The counters update automatically.</li>
+      <li>Check your word and character totals instantly.</li>
+      <li>Use the Clear Text button to start again.</li>
+    </ol>
+
+    <h3>Who Can Use a Word Counter?</h3>
+
+    <p>
+      A word counter can be useful for students checking assignments,
+      writers preparing articles, bloggers creating posts, and social
+      media users working with character limits.
+    </p>
+
+    <h3>Why Is Word Count Important?</h3>
+
+    <p>
+      Many assignments, articles, applications, and online platforms
+      have recommended or required word and character limits. A word
+      counter makes it easy to check your content before submitting
+      or publishing it.
+    </p>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <h3>Is this word counter free?</h3>
+
+    <p>
+      Yes. ToolNova's word and character counter is completely free
+      to use online.
+    </p>
+
+    <h3>Does the tool count characters?</h3>
+
+    <p>
+      Yes. It shows both total characters and characters without spaces.
+    </p>
+
+    <h3>Does it count sentences?</h3>
+
+    <p>
+      Yes. The tool provides an automatic sentence count based on
+      common sentence-ending punctuation.
+    </p>
+
+    <h3>Do I need to install anything?</h3>
+
+    <p>
+      No. The tool works directly in your web browser and does not
+      require software installation or registration.
+    </p>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>More Free ToolNova Tools</h2>
+
+    <p>
+      Try our other free online tools:
+    </p>
+
+    <div class="tools-links">
+
+      <a href="compressor.html">Image Compressor</a>
+
+      <a href="resizer.html">Image Resizer</a>
+
+      <a href="qr.html">QR Code Generator</a>
+
+      <a href="password.html">Password Generator</a>
+
+      <a href="percentage.html">Percentage Calculator</a>
+
+      <a href="age.html">Age Calculator</a>
+
+      <a href="converter.html">Unit Converter</a>
+
+      <a href="pdf.html">PDF Merger</a>
+
+    </div>
+
+  </section>
+
 </div>
 
-<div class="stat">
-<span class="number" id="characters">0</span>
-<span class="label">Characters</span>
-</div>
+<footer>
 
-<div class="stat">
-<span class="number" id="charactersNoSpaces">0</span>
-<span class="label">Characters (No Spaces)</span>
-</div>
+  <p>© 2026 ToolNova. All rights reserved.</p>
 
-<div class="stat">
-<span class="number" id="sentences">0</span>
-<span class="label">Sentences</span>
-</div>
+  <p>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </p>
 
-</div>
-
-<button onclick="clearText()">Clear Text</button>
-
-</div>
+</footer>
 
 <script>
 
-function countText(){
+function countText() {
 
-    const text = document.getElementById("text").value;
+  const text = document.getElementById("textInput").value;
 
-    const words = text.trim() === ""
-        ? 0
-        : text.trim().split(/\s+/).length;
+  const words = text.trim()
+    ? text.trim().split(/\s+/).length
+    : 0;
 
-    const characters = text.length;
+  const characters = text.length;
 
-    const charactersNoSpaces =
-        text.replace(/\s/g, "").length;
+  const charactersWithoutSpaces =
+    text.replace(/\s/g, "").length;
 
-    const sentences = text.trim() === ""
-        ? 0
-        : (text.match(/[.!?]+/g) || []).length;
+  const sentences = text.trim()
+    ? text.split(/[.!?]+/)
+        .filter(sentence => sentence.trim().length > 0)
+        .length
+    : 0;
 
-    document.getElementById("words").textContent = words;
-    document.getElementById("characters").textContent = characters;
-    document.getElementById("charactersNoSpaces").textContent = charactersNoSpaces;
-    document.getElementById("sentences").textContent = sentences;
+  document.getElementById("wordCount").textContent = words;
+
+  document.getElementById("characterCount").textContent =
+    characters;
+
+  document.getElementById("noSpaceCount").textContent =
+    charactersWithoutSpaces;
+
+  document.getElementById("sentenceCount").textContent =
+    sentences;
 }
 
-function clearText(){
+function clearText() {
 
-    document.getElementById("text").value = "";
-    countText();
+  document.getElementById("textInput").value = "";
+
+  countText();
 
 }
 
 </script>
 
 </body>
-</html>
+          </html>
