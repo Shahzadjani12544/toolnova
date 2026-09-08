@@ -1,138 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Age Calculator - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
+  <title>Age Calculator – Calculate Your Exact Age Online | ToolNova</title>
 
-.container{
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+  <meta name="description" content="Calculate your exact age in years, months, and days with ToolNova's free online age calculator. Simple, fast, and easy to use.">
 
-h1{
-    color:#222;
-}
+  <meta name="keywords" content="age calculator, calculate age, exact age calculator, age calculator online, date of birth calculator, free age calculator">
 
-p{
-    color:#666;
-}
+  <meta name="author" content="ToolNova">
+  <meta name="robots" content="index, follow">
 
-input{
-    width:100%;
-    box-sizing:border-box;
-    padding:13px;
-    margin:10px 0 20px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:16px;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/age.html">
 
-button{
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-button:hover{
-    background:#1d4ed8;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
 
-.result{
-    margin-top:20px;
-    padding:15px;
-    background:#f1f5f9;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-    line-height:1.7;
-}
-</style>
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .tool-box {
+      text-align: center;
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+    }
+
+    .input-group {
+      max-width: 400px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f3f4f6;
+      min-height: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+    .content-box {
+      margin-top: 25px;
+    }
+
+    .content-box h2 {
+      color: #111827;
+    }
+
+    .content-box h3 {
+      margin-top: 22px;
+    }
+
+    .content-box p,
+    .content-box li {
+      line-height: 1.7;
+    }
+
+    .tools-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tools-links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<header>
+  <h1>🚀 ToolNova</h1>
+  <p>Free Tools for Everyone</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
 <div class="container">
 
-<h1>Age Calculator</h1>
+  <section class="tool-box">
 
-<p>Enter your date of birth to calculate your age.</p>
+    <h2>🎂 Age Calculator</h2>
 
-<input type="date" id="dob">
+    <p>
+      Calculate your exact age in years, months, and days.
+    </p>
 
-<br>
+    <div class="input-group">
+      <label for="dob">Enter Your Date of Birth</label>
 
-<button onclick="calculateAge()">Calculate Age</button>
+      <input
+        type="date"
+        id="dob"
+      >
+    </div>
 
-<div class="result" id="result">
-Your age will appear here
+    <button onclick="calculateAge()">
+      Calculate Age
+    </button>
+
+    <div id="result">
+      Your age will appear here
+    </div>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>Free Online Age Calculator</h2>
+
+    <p>
+      ToolNova's free age calculator helps you calculate your exact
+      age from your date of birth. Enter your birth date and the tool
+      will calculate your age in years, months, and days.
+    </p>
+
+    <h3>How to Use the Age Calculator</h3>
+
+    <ol>
+      <li>Select your date of birth.</li>
+      <li>Click the "Calculate Age" button.</li>
+      <li>Your age will be displayed instantly.</li>
+    </ol>
+
+    <h3>What Does This Age Calculator Show?</h3>
+
+    <p>
+      The calculator shows your current age in years, months, and
+      days based on your date of birth and today's date.
+    </p>
+
+    <h3>Age Calculator Features</h3>
+
+    <ul>
+      <li>Free to use</li>
+      <li>Calculate exact age</li>
+      <li>Shows years, months, and days</li>
+      <li>Works on mobile and desktop</li>
+      <li>No registration required</li>
+      <li>Simple and easy interface</li>
+    </ul>
+
+    <h3>Why Calculate Your Exact Age?</h3>
+
+    <p>
+      An age calculator can be useful for checking your age for
+      birthdays, school forms, applications, eligibility requirements,
+      personal records, and everyday calculations.
+    </p>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <h3>What is an age calculator?</h3>
+
+    <p>
+      An age calculator is an online tool that calculates a person's
+      age using their date of birth and a selected current date.
+    </p>
+
+    <h3>Can I calculate my age in years, months, and days?</h3>
+
+    <p>
+      Yes. ToolNova's age calculator displays the result in years,
+      months, and days.
+    </p>
+
+    <h3>Is the age calculator free?</h3>
+
+    <p>
+      Yes. ToolNova's online age calculator is free and does not
+      require an account.
+    </p>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>More Free ToolNova Tools</h2>
+
+    <p>
+      Explore our other free online tools:
+    </p>
+
+    <div class="tools-links">
+      <a href="compressor.html">Image Compressor</a>
+      <a href="resizer.html">Image Resizer</a>
+      <a href="qr.html">QR Code Generator</a>
+      <a href="password.html">Password Generator</a>
+      <a href="percentage.html">Percentage Calculator</a>
+      <a href="counter.html">Word Counter</a>
+      <a href="converter.html">Unit Converter</a>
+      <a href="pdf.html">PDF Merger</a>
+    </div>
+
+  </section>
+
 </div>
 
-</div>
+<footer>
+
+  <p>© 2026 ToolNova. All rights reserved.</p>
+
+  <p>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </p>
+
+</footer>
 
 <script>
 
-function calculateAge(){
+function calculateAge() {
 
-    const dobValue = document.getElementById("dob").value;
-    const result = document.getElementById("result");
+  const dobInput = document.getElementById("dob");
+  const result = document.getElementById("result");
 
-    if(!dobValue){
-        result.textContent = "Please enter your date of birth.";
-        return;
-    }
+  if (!dobInput.value) {
+    result.textContent = "Please select your date of birth.";
+    return;
+  }
 
-    const dob = new Date(dobValue + "T00:00:00");
-    const today = new Date();
+  const birthDate = new Date(dobInput.value + "T00:00:00");
+  const today = new Date();
 
-    if(dob > today){
-        result.textContent = "Date of birth cannot be in the future.";
-        return;
-    }
+  if (birthDate > today) {
+    result.textContent = "Date of birth cannot be in the future.";
+    return;
+  }
 
-    let years = today.getFullYear() - dob.getFullYear();
-    let months = today.getMonth() - dob.getMonth();
-    let days = today.getDate() - dob.getDate();
+  let years = today.getFullYear() - birthDate.getFullYear();
+  let months = today.getMonth() - birthDate.getMonth();
+  let days = today.getDate() - birthDate.getDate();
 
-    if(days < 0){
-        months--;
+  if (days < 0) {
+    months--;
 
-        const previousMonth = new Date(
-            today.getFullYear(),
-            today.getMonth(),
-            0
-        );
+    const previousMonth = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    );
 
-        days += previousMonth.getDate();
-    }
+    days += previousMonth.getDate();
+  }
 
-    if(months < 0){
-        years--;
-        months += 12;
-    }
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
 
-    result.innerHTML =
-        "Your Age is:<br>" +
-        years + " Years, " +
-        months + " Months, " +
-        days + " Days";
+  result.innerHTML =
+    "Your Age:<br>" +
+    years + " Years, " +
+    months + " Months, " +
+    days + " Days";
+
 }
 
 </script>
