@@ -1,139 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR Code Generator - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
+  <title>QR Code Generator Online - Free QR Maker | ToolNova</title>
 
-.container{
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+  <meta name="description" content="Create QR codes online for free with ToolNova. Generate QR codes for text, links, websites, contact information and more, then download your QR code.">
 
-h1{
-    color:#222;
-}
+  <meta name="keywords" content="QR code generator, QR maker, create QR code, free QR generator, QR code online, QR code maker">
 
-p{
-    color:#666;
-}
+  <meta name="robots" content="index, follow">
 
-textarea{
-    width:100%;
-    height:100px;
-    padding:12px;
-    box-sizing:border-box;
-    border:1px solid #ddd;
-    border-radius:10px;
-    resize:none;
-    font-size:16px;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/qr.html">
 
-button{
-    margin-top:15px;
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-button:hover{
-    background:#1d4ed8;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
 
-#qrcode{
-    margin:25px auto;
-    display:flex;
-    justify-content:center;
-}
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-.download{
-    display:none;
-    background:#16a34a;
-}
-</style>
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .tool-card,
+    .content {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .tool-card {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .tool-card h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+      font-family: Arial, sans-serif;
+    }
+
+    button,
+    .download-btn {
+      display: inline-block;
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 12px 5px;
+    }
+
+    button:hover,
+    .download-btn:hover {
+      background: #1d4ed8;
+    }
+
+    #qrcode {
+      margin: 25px auto;
+      min-height: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #qrcode img,
+    #qrcode canvas {
+      margin: auto;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .info {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      color: #555;
+    }
+
+    .content {
+      margin-top: 25px;
+      padding: 30px;
+    }
+
+    .content h2 {
+      color: #111827;
+    }
+
+    .content h3 {
+      color: #2563eb;
+      margin-top: 25px;
+    }
+
+    .faq {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .links {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      background: #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .tool-card,
+      .content {
+        padding: 22px;
+      }
+
+      header h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <h1>🚀 ToolNova</h1>
+  <p>Free Tools for Everyone</p>
+</header>
 
-<h1>QR Code Generator</h1>
+<main class="container">
 
-<p>Enter text or a website link and generate your QR code.</p>
+  <section class="tool-card">
 
-<textarea id="text" placeholder="Enter text or URL here..."></textarea>
+    <h2>Free QR Code Generator</h2>
 
-<br>
+    <p>
+      Create a QR code instantly from text, links, websites and other information.
+    </p>
 
-<button onclick="generateQR()">Generate QR Code</button>
+    <textarea
+      id="qrText"
+      placeholder="Enter text, website URL, or any information..."
+    ></textarea>
 
-<div id="qrcode"></div>
+    <br>
 
-<button id="downloadBtn" class="download" onclick="downloadQR()">
-Download QR Code
-</button>
+    <button id="generateBtn">
+      Generate QR Code
+    </button>
 
-</div>
+    <div id="qrcode"></div>
+
+    <a
+      id="downloadBtn"
+      class="download-btn"
+      style="display:none;"
+      download="toolnova-qr-code.png"
+    >
+      Download QR Code
+    </a>
+
+    <div class="info" id="info">
+      Enter your information above and generate your QR code.
+    </div>
+
+  </section>
+
+  <section class="content">
+
+    <h2>Create QR Codes Online for Free</h2>
+
+    <p>
+      ToolNova's free QR Code Generator lets you quickly create QR codes
+      from text, website addresses, links and other information.
+      Generate your QR code and download it for easy sharing.
+    </p>
+
+    <p>
+      QR codes can be scanned by smartphones and QR scanner applications.
+      They are useful for websites, menus, business information,
+      social media links, events, products and many other purposes.
+    </p>
+
+    <h3>How to Create a QR Code</h3>
+
+    <p>
+      1. Enter your text, link, or other information in the box.
+    </p>
+
+    <p>
+      2. Click <strong>Generate QR Code</strong>.
+    </p>
+
+    <p>
+      3. Your QR code will appear on the page.
+    </p>
+
+    <p>
+      4. Click <strong>Download QR Code</strong> to save the image.
+    </p>
+
+    <h3>What Can You Put in a QR Code?</h3>
+
+    <p>
+      You can create QR codes containing website URLs, plain text,
+      contact information, messages, links and other supported text data.
+    </p>
+
+    <h3>Why Use a QR Code?</h3>
+
+    <p>
+      QR codes provide a convenient way to share information without
+      requiring users to manually type long text or website addresses.
+      A smartphone camera or QR scanner can read the information quickly.
+    </p>
+
+    <h3>Simple and Easy to Use</h3>
+
+    <p>
+      ToolNova's QR generator works directly in your browser and does not
+      require you to create an account. Enter your information, generate
+      the code and download it.
+    </p>
+
+    <div class="faq">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <strong>Is the QR Code Generator free?</strong>
+        <p>
+          Yes. ToolNova's QR Code Generator is free to use.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I create a QR code for a website?</strong>
+        <p>
+          Yes. Enter the complete website address and generate your QR code.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I download the QR code?</strong>
+        <p>
+          Yes. After generating the QR code, use the Download QR Code button
+          to save it as an image.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Do I need an account?</strong>
+        <p>
+          No. You can use the QR Code Generator without creating an account.
+        </p>
+      </div>
+
+    </div>
+
+    <h2>More Free Tools</h2>
+
+    <div class="links">
+      <a href="compressor.html">Image Compressor</a>
+      <a href="resizer.html">Image Resizer</a>
+      <a href="password.html">Password Generator</a>
+      <a href="percentage.html">Percentage Calculator</a>
+      <a href="age.html">Age Calculator</a>
+      <a href="counter.html">Word Counter</a>
+      <a href="converter.html">Unit Converter</a>
+      <a href="pdf.html">PDF Merger</a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <p>
+    © 2026 ToolNova. All rights reserved.
+  </p>
+
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-function generateQR(){
 
-    const text = document.getElementById("text").value.trim();
-    const qr = document.getElementById("qrcode");
-    const downloadBtn = document.getElementById("downloadBtn");
+  const qrText = document.getElementById("qrText");
+  const generateBtn = document.getElementById("generateBtn");
+  const qrcode = document.getElementById("qrcode");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const info = document.getElementById("info");
 
-    if(text === ""){
-        alert("Please enter some text or a URL.");
-        return;
+  generateBtn.addEventListener("click", function() {
+
+    const text = qrText.value.trim();
+
+    if (!text) {
+      qrcode.innerHTML = "";
+      downloadBtn.style.display = "none";
+      info.textContent =
+        "Please enter some text or a website URL first.";
+      return;
     }
 
-    qr.innerHTML = "";
+    qrcode.innerHTML = "";
 
-    new QRCode(qr,{
-        text:text,
-        width:220,
-        height:220,
-        colorDark:"#000000",
-        colorLight:"#ffffff",
-        correctLevel:QRCode.CorrectLevel.H
+    new QRCode(qrcode, {
+      text: text,
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.H
     });
 
-    downloadBtn.style.display = "inline-block";
-}
+    setTimeout(function() {
 
-function downloadQR(){
+      const qrImage = qrcode.querySelector("img");
 
-    const canvas = document.querySelector("#qrcode canvas");
+      if (qrImage) {
+        downloadBtn.href = qrImage.src;
+        downloadBtn.style.display = "inline-block";
+      }
 
-    if(!canvas){
-        alert("Please generate a QR code first.");
-        return;
-    }
+      info.innerHTML =
+        "QR code generated successfully. " +
+        "You can now download it.";
 
-    const link = document.createElement("a");
-    link.download = "toolnova-qr-code.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-}
+    }, 300);
+
+  });
+
 </script>
 
 </body>
