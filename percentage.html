@@ -1,109 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percentage Calculator - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
+  <title>Percentage Calculator – Calculate Percentages Online Free | ToolNova</title>
 
-.container{
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+  <meta name="description" content="Use ToolNova's free online percentage calculator to calculate percentages quickly and easily. Find X percent of any number instantly.">
 
-h1{
-    color:#222;
-}
+  <meta name="keywords" content="percentage calculator, percent calculator, calculate percentage, percentage calculator online, free percentage calculator">
 
-p{
-    color:#666;
-}
+  <meta name="author" content="ToolNova">
+  <meta name="robots" content="index, follow">
 
-input{
-    width:100%;
-    box-sizing:border-box;
-    padding:13px;
-    margin:8px 0 15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:16px;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/percentage.html">
 
-button{
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-button:hover{
-    background:#1d4ed8;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
 
-.result{
-    margin-top:20px;
-    padding:15px;
-    background:#f1f5f9;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-}
-</style>
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .tool-box {
+      text-align: center;
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+    }
+
+    .input-group {
+      margin: 18px auto;
+      max-width: 450px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 20px;
+      font-weight: bold;
+      min-height: 25px;
+    }
+
+    .content-box {
+      margin-top: 25px;
+    }
+
+    .content-box h2 {
+      color: #111827;
+    }
+
+    .content-box h3 {
+      margin-top: 22px;
+    }
+
+    .content-box p,
+    .content-box li {
+      line-height: 1.7;
+    }
+
+    .tools-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tools-links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<header>
+  <h1>🚀 ToolNova</h1>
+  <p>Free Tools for Everyone</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
 <div class="container">
 
-<h1>Percentage Calculator</h1>
+  <section class="tool-box">
 
-<p>Calculate percentages quickly and easily.</p>
+    <h2>📊 Percentage Calculator</h2>
 
-<label>What is X% of Y?</label>
+    <p>
+      Calculate percentages quickly and easily with this free online
+      percentage calculator.
+    </p>
 
-<input type="number" id="percent" placeholder="Enter percentage (e.g. 20)">
+    <div class="input-group">
+      <label for="percent">Percentage (%)</label>
+      <input
+        type="number"
+        id="percent"
+        placeholder="Enter percentage"
+      >
+    </div>
 
-<input type="number" id="number" placeholder="Enter number (e.g. 500)">
+    <div class="input-group">
+      <label for="number">Number</label>
+      <input
+        type="number"
+        id="number"
+        placeholder="Enter number"
+      >
+    </div>
 
-<button onclick="calculate()">Calculate</button>
+    <button onclick="calculatePercentage()">
+      Calculate Percentage
+    </button>
 
-<div class="result" id="result">
-Result will appear here
+    <div id="result">
+      Result will appear here
+    </div>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>Free Percentage Calculator Online</h2>
+
+    <p>
+      ToolNova's percentage calculator makes it easy to find a
+      percentage of any number. Enter the percentage and the number,
+      then click the calculate button to get your answer instantly.
+    </p>
+
+    <h3>How to Calculate a Percentage?</h3>
+
+    <p>
+      To calculate a percentage of a number, multiply the percentage
+      by the number and divide the result by 100.
+    </p>
+
+    <p>
+      For example, to calculate 20% of 500:
+    </p>
+
+    <p>
+      <strong>20 ÷ 100 × 500 = 100</strong>
+    </p>
+
+    <h3>Percentage Calculator Features</h3>
+
+    <ul>
+      <li>Free online percentage calculator</li>
+      <li>Simple and easy to use</li>
+      <li>Instant calculation</li>
+      <li>Works on mobile phones and computers</li>
+      <li>No account or registration required</li>
+      <li>No software installation required</li>
+    </ul>
+
+    <h3>Where Can You Use a Percentage Calculator?</h3>
+
+    <p>
+      Percentage calculations are useful for shopping discounts,
+      exams and grades, business calculations, finance, statistics,
+      school homework, and everyday calculations.
+    </p>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <h3>What is a percentage?</h3>
+
+    <p>
+      A percentage is a way of expressing a number as a fraction
+      of 100. The symbol used for percentage is %.
+    </p>
+
+    <h3>What is 20% of 500?</h3>
+
+    <p>
+      20% of 500 is 100.
+    </p>
+
+    <h3>Is this percentage calculator free?</h3>
+
+    <p>
+      Yes. ToolNova's percentage calculator is free to use online
+      and does not require registration.
+    </p>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>More Free ToolNova Tools</h2>
+
+    <p>
+      Try our other free online tools:
+    </p>
+
+    <div class="tools-links">
+      <a href="compressor.html">Image Compressor</a>
+      <a href="resizer.html">Image Resizer</a>
+      <a href="qr.html">QR Code Generator</a>
+      <a href="password.html">Password Generator</a>
+      <a href="age.html">Age Calculator</a>
+      <a href="counter.html">Word Counter</a>
+      <a href="converter.html">Unit Converter</a>
+      <a href="pdf.html">PDF Merger</a>
+    </div>
+
+  </section>
+
 </div>
 
-</div>
+<footer>
+
+  <p>© 2026 ToolNova. All rights reserved.</p>
+
+  <p>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </p>
+
+</footer>
 
 <script>
 
-function calculate(){
+function calculatePercentage() {
 
-    const percent = parseFloat(document.getElementById("percent").value);
-    const number = parseFloat(document.getElementById("number").value);
-    const result = document.getElementById("result");
+  const percent = parseFloat(
+    document.getElementById("percent").value
+  );
 
-    if(isNaN(percent) || isNaN(number)){
-        result.textContent = "Please enter both numbers.";
-        return;
-    }
+  const number = parseFloat(
+    document.getElementById("number").value
+  );
 
-    const answer = (percent / 100) * number;
+  const result = document.getElementById("result");
 
-    result.textContent = percent + "% of " + number + " = " + answer;
+  if (isNaN(percent) || isNaN(number)) {
+    result.textContent = "Please enter both values.";
+    return;
+  }
+
+  const answer = (percent / 100) * number;
+
+  result.textContent =
+    percent + "% of " + number + " = " + answer;
 }
 
 </script>
