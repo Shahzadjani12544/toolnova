@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Image Compressor Online - Compress JPG & PNG | ToolNova</title>
+  <title>Image Compressor Online - Compress JPG, PNG & WebP | ToolNova</title>
 
-  <meta name="description" content="Compress images online for free. Reduce JPG and PNG image file size quickly with ToolNova Image Compressor without installing software.">
+  <meta name="description" content="Compress images online for free with ToolNova. Reduce JPG, PNG and WebP image file size quickly and download your compressed image.">
 
-  <meta name="keywords" content="image compressor, compress image online, image size reducer, compress JPG, compress PNG, reduce image size, free image compressor">
+  <meta name="keywords" content="image compressor, compress image online, JPG compressor, PNG compressor, WebP compressor, reduce image size, free image compressor">
 
   <meta name="author" content="ToolNova">
   <meta name="robots" content="index, follow">
@@ -67,9 +67,9 @@
     }
 
     .hero p {
-      color: #64748b;
       max-width: 700px;
       margin: auto;
+      color: #64748b;
     }
 
     .tool-box {
@@ -87,45 +87,40 @@
       border: 1px dashed #94a3b8;
       border-radius: 8px;
       background: #f8fafc;
-      margin-bottom: 20px;
+      margin: 15px 0;
     }
 
-    .quality-area {
+    .quality-box {
       margin: 20px 0;
     }
 
-    .quality-area label {
+    .quality-box label {
       display: block;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    input[type="range"] {
+    #quality {
       width: 100%;
       max-width: 500px;
     }
 
     #qualityValue {
-      font-weight: bold;
       color: #2563eb;
     }
 
-    button,
-    .download-btn {
-      display: inline-block;
-      border: none;
+    button {
       background: #2563eb;
       color: white;
-      padding: 12px 22px;
+      border: none;
+      padding: 12px 24px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      text-decoration: none;
-      margin: 6px;
+      font-size: 15px;
     }
 
-    button:hover,
-    .download-btn:hover {
+    button:hover {
       background: #1d4ed8;
     }
 
@@ -134,10 +129,10 @@
     }
 
     #preview {
+      display: block;
       max-width: 100%;
       max-height: 400px;
-      margin: 15px auto;
-      display: block;
+      margin: 20px auto;
       border-radius: 8px;
     }
 
@@ -146,6 +141,20 @@
       padding: 15px;
       border-radius: 8px;
       margin: 15px 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: #15803d;
     }
 
     .content {
@@ -157,16 +166,17 @@
       margin-top: 30px;
     }
 
-    .content p {
-      color: #475569;
-    }
-
-    .content ul {
+    .content p,
+    .content li {
       color: #475569;
     }
 
     .faq {
-      margin-top: 40px;
+      margin-top: 45px;
+    }
+
+    .faq h2 {
+      color: #0f172a;
     }
 
     details {
@@ -184,7 +194,6 @@
 
     details p {
       color: #64748b;
-      margin-bottom: 0;
     }
 
     .related {
@@ -198,8 +207,9 @@
       color: #1d4ed8;
       font-weight: bold;
       text-decoration: none;
+      margin-right: 15px;
       display: inline-block;
-      margin: 6px 12px 6px 0;
+      margin-top: 8px;
     }
 
     footer {
@@ -217,7 +227,7 @@
     footer a {
       color: #93c5fd;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 7px;
     }
 
     @media (max-width: 600px) {
@@ -248,9 +258,10 @@
 
   <section class="hero">
     <h1>Image Compressor Online</h1>
+
     <p>
-      Compress JPG and PNG images online for free. Reduce image file size
-      quickly while maintaining good image quality.
+      Compress JPG, PNG and WebP images online for free.
+      Reduce image file size quickly and easily.
     </p>
   </section>
 
@@ -258,9 +269,14 @@
 
     <h2>Compress Your Image</h2>
 
-    <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp">
+    <input
+      type="file"
+      id="imageInput"
+      accept="image/jpeg,image/png,image/webp"
+    >
 
-    <div class="quality-area">
+    <div class="quality-box">
+
       <label for="quality">
         Compression Quality:
         <span id="qualityValue">70%</span>
@@ -273,9 +289,12 @@
         max="100"
         value="70"
       >
+
     </div>
 
-    <button onclick="compressImage()">Compress Image</button>
+    <button type="button" id="compressButton">
+      Compress Image
+    </button>
 
     <div id="result"></div>
 
@@ -283,46 +302,38 @@
 
   <section class="content">
 
-    <h2>Free Image Compressor</h2>
+    <h2>Free Online Image Compressor</h2>
 
     <p>
-      ToolNova Image Compressor is a free online tool that helps you reduce
-      the file size of images. It can be useful when you need smaller images
-      for websites, social media, email attachments or online forms.
-    </p>
-
-    <p>
-      Select an image, choose your preferred compression quality and click
-      the compress button. The compressed image can then be downloaded to
-      your device.
+      ToolNova Image Compressor helps you reduce the file size of your images
+      without installing additional software. It is useful for websites,
+      email attachments, online forms and social media.
     </p>
 
     <h2>How to Compress an Image</h2>
 
     <ol>
-      <li>Select a JPG, PNG or WebP image from your device.</li>
-      <li>Choose the compression quality using the slider.</li>
-      <li>Click the <strong>Compress Image</strong> button.</li>
-      <li>Review the result and download the compressed image.</li>
+      <li>Select an image from your device.</li>
+      <li>Choose your preferred compression quality.</li>
+      <li>Click the Compress Image button.</li>
+      <li>Check the compressed image and file size.</li>
+      <li>Download your compressed image.</li>
     </ol>
 
-    <h2>Why Compress Images?</h2>
+    <h2>Why Reduce Image Size?</h2>
 
     <ul>
-      <li>Reduce image file size.</li>
-      <li>Make website images easier to load.</li>
-      <li>Reduce the size of email attachments.</li>
-      <li>Save storage space.</li>
-      <li>Make images easier to upload to online services.</li>
+      <li>Smaller files are easier to upload.</li>
+      <li>Smaller images can help reduce storage usage.</li>
+      <li>Compressed images can be useful for websites.</li>
+      <li>Smaller email attachments are easier to send.</li>
     </ul>
 
-    <h2>Image Compression Quality</h2>
+    <h2>Supported Image Formats</h2>
 
     <p>
-      A higher quality setting generally keeps more image detail but may
-      produce a larger file. A lower quality setting can create a smaller
-      file but may reduce image quality. Try different settings to find the
-      best balance for your needs.
+      You can select common JPG, PNG and WebP image files.
+      The compressed result is provided as a JPEG image.
     </p>
 
   </section>
@@ -332,46 +343,46 @@
     <h2>Frequently Asked Questions</h2>
 
     <details>
-      <summary>What is an image compressor?</summary>
+      <summary>Is ToolNova Image Compressor free?</summary>
       <p>
-        An image compressor reduces the file size of an image while attempting
-        to maintain suitable visual quality.
+        Yes. The Image Compressor is available for free basic use.
       </p>
     </details>
 
     <details>
-      <summary>Is this image compressor free?</summary>
+      <summary>Can I compress JPG images?</summary>
       <p>
-        Yes. ToolNova provides this image compression tool free for basic use.
+        Yes. JPG and JPEG images are supported.
       </p>
     </details>
 
     <details>
-      <summary>Which image formats are supported?</summary>
+      <summary>Can I compress PNG images?</summary>
       <p>
-        This tool accepts common JPG, PNG and WebP image files.
+        Yes. PNG images can be selected and compressed. The resulting file is
+        downloaded as JPEG.
       </p>
     </details>
 
     <details>
-      <summary>Can I compress images on my phone?</summary>
+      <summary>Can I use the compressor on my phone?</summary>
       <p>
         Yes. ToolNova is designed to work in modern mobile and desktop browsers.
       </p>
     </details>
 
     <details>
-      <summary>Does the tool require software installation?</summary>
+      <summary>Do I need to install software?</summary>
       <p>
-        No. You can use the tool directly through your web browser.
+        No. The tool works directly in your web browser.
       </p>
     </details>
 
     <details>
-      <summary>Are my images stored on ToolNova?</summary>
+      <summary>How does the compression work?</summary>
       <p>
-        The compression process is performed in your browser. Your image is
-        not intentionally uploaded to a ToolNova server by this page.
+        The image is processed using your browser's built-in canvas features.
+        You can adjust the quality before creating the compressed image.
       </p>
     </details>
 
@@ -379,12 +390,11 @@
 
   <section class="related">
 
-    <h2>Related Free Tools</h2>
+    <h2>Related ToolNova Tools</h2>
 
     <a href="resizer.html">📐 Image Resizer</a>
     <a href="pdf.html">📑 PDF Merger</a>
     <a href="qr.html">📱 QR Code Generator</a>
-    <a href="password.html">🔐 Password Generator</a>
     <a href="index.html">🏠 All Tools</a>
 
   </section>
@@ -404,25 +414,33 @@
 </footer>
 
 <script>
-  const qualitySlider = document.getElementById("quality");
+  const imageInput = document.getElementById("imageInput");
+  const quality = document.getElementById("quality");
   const qualityValue = document.getElementById("qualityValue");
+  const compressButton = document.getElementById("compressButton");
+  const result = document.getElementById("result");
 
-  qualitySlider.addEventListener("input", function () {
-    qualityValue.textContent = this.value + "%";
+  quality.addEventListener("input", function () {
+    qualityValue.textContent = quality.value + "%";
   });
 
-  function compressImage() {
+  compressButton.addEventListener("click", function () {
 
-    const input = document.getElementById("imageInput");
-    const result = document.getElementById("result");
+    result.innerHTML = "";
 
-    if (!input.files || input.files.length === 0) {
-      result.innerHTML = "<p>Please select an image first.</p>";
+    if (imageInput.files.length === 0) {
+      result.innerHTML =
+        "<p>Please select an image first.</p>";
       return;
     }
 
-    const file = input.files[0];
-    const quality = Number(qualitySlider.value) / 100;
+    const file = imageInput.files[0];
+
+    if (!file.type.startsWith("image/")) {
+      result.innerHTML =
+        "<p>Please select a valid image file.</p>";
+      return;
+    }
 
     const reader = new FileReader();
 
@@ -435,58 +453,88 @@
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
 
-        canvas.width = img.width;
-        canvas.height = img.height;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
 
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(
+          img,
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
 
-        const compressedData = canvas.toDataURL(
+        const compressionQuality =
+          Number(quality.value) / 100;
+
+        canvas.toBlob(
+          function (blob) {
+
+            if (!blob) {
+              result.innerHTML =
+                "<p>Compression failed. Please try another image.</p>";
+              return;
+            }
+
+            const originalSize =
+              (file.size / 1024).toFixed(2);
+
+            const compressedSize =
+              (blob.size / 1024).toFixed(2);
+
+            const downloadURL =
+              URL.createObjectURL(blob);
+
+            const previewURL =
+              URL.createObjectURL(blob);
+
+            result.innerHTML = `
+              <div class="stats">
+                <strong>Original Size:</strong>
+                ${originalSize} KB
+                <br><br>
+
+                <strong>Compressed Size:</strong>
+                ${compressedSize} KB
+              </div>
+
+              <img
+                id="preview"
+                src="${previewURL}"
+                alt="Compressed image preview"
+              >
+
+              <a
+                class="download-btn"
+                href="${downloadURL}"
+                download="ToolNova-Compressed-Image.jpg"
+              >
+                Download Compressed Image
+              </a>
+            `;
+
+          },
           "image/jpeg",
-          quality
+          compressionQuality
         );
+      };
 
-        const byteString = atob(compressedData.split(",")[1]);
-        const arrayBuffer = new ArrayBuffer(byteString.length);
-        const intArray = new Uint8Array(arrayBuffer);
-
-        for (let i = 0; i < byteString.length; i++) {
-          intArray[i] = byteString.charCodeAt(i);
-        }
-
-        const compressedBlob = new Blob(
-          [intArray],
-          { type: "image/jpeg" }
-        );
-
-        const originalKB = (file.size / 1024).toFixed(2);
-        const compressedKB = (compressedBlob.size / 1024).toFixed(2);
-
-        const downloadURL = URL.createObjectURL(compressedBlob);
-
-        result.innerHTML = `
-          <div class="stats">
-            <strong>Original Size:</strong> ${originalKB} KB<br>
-            <strong>Compressed Size:</strong> ${compressedKB} KB
-          </div>
-
-          <img id="preview" src="${compressedData}" alt="Compressed image preview">
-
-          <a
-            class="download-btn"
-            href="${downloadURL}"
-            download="ToolNova-Compressed-Image.jpg"
-          >
-            Download Compressed Image
-          </a>
-        `;
+      img.onerror = function () {
+        result.innerHTML =
+          "<p>Unable to read this image. Please try another image.</p>";
       };
 
       img.src = event.target.result;
     };
 
+    reader.onerror = function () {
+      result.innerHTML =
+        "<p>Unable to read the selected file.</p>";
+    };
+
     reader.readAsDataURL(file);
-  }
+  });
 </script>
 
 </body>
-  </html>
+</html>
