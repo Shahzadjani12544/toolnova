@@ -1,310 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Resizer - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+  <title>Image Resizer Online - Resize Images for Free | ToolNova</title>
 
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fb;
-color:#172033;
-}
+  <meta name="description" content="Resize images online for free with ToolNova. Change image width and height quickly in your browser and download the resized image.">
 
-header{
-background:white;
-padding:18px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px #0001;
-}
+  <meta name="keywords" content="image resizer, resize image, resize photo online, image size changer, JPG resizer, PNG resizer">
 
-.logo{
-font-size:25px;
-font-weight:bold;
-}
+  <meta name="robots" content="index, follow">
 
-.logo span{
-color:#2563eb;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/resizer.html">
 
-header a{
-text-decoration:none;
-color:#172033;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.container{
-max-width:700px;
-margin:50px auto;
-padding:20px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
 
-.box{
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 5px 25px #0001;
-text-align:center;
-}
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-h1{
-font-size:32px;
-margin-bottom:10px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
 
-.subtitle{
-color:#667085;
-margin-bottom:25px;
-}
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+    }
 
-input[type=file]{
-display:none;
-}
+    .container {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
 
-.upload{
-display:block;
-padding:18px;
-border:2px dashed #2563eb;
-border-radius:12px;
-cursor:pointer;
-color:#2563eb;
-font-weight:bold;
-margin-bottom:20px;
-}
+    .tool-card,
+    .content {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
 
-.fields{
-display:flex;
-gap:12px;
-margin:20px 0;
-}
+    .tool-card {
+      padding: 30px;
+      text-align: center;
+    }
 
-.fields div{
-flex:1;
-text-align:left;
-}
+    .tool-card h2 {
+      margin-top: 0;
+      color: #111827;
+    }
 
-.fields label{
-display:block;
-margin-bottom:6px;
-font-weight:bold;
-}
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #f9fafb;
+    }
 
-.fields input{
-width:100%;
-padding:12px;
-border:1px solid #d0d5dd;
-border-radius:8px;
-font-size:16px;
-}
+    .dimensions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 20px 0;
+    }
 
-button,.download{
-border:0;
-background:#2563eb;
-color:white;
-padding:13px 22px;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-text-decoration:none;
-display:inline-block;
-}
+    .field {
+      flex: 1;
+      max-width: 250px;
+      text-align: left;
+    }
 
-button:disabled{
-background:#9ca3af;
-cursor:not-allowed;
-}
+    .field label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
 
-#result{
-margin-top:25px;
-display:none;
-}
+    .field input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
 
-#preview{
-max-width:100%;
-max-height:250px;
-margin:15px auto;
-border-radius:10px;
-}
+    button,
+    .download-btn {
+      display: inline-block;
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 8px;
+    }
 
-.info{
-margin:12px 0;
-color:#475467;
-}
+    button:hover,
+    .download-btn:hover {
+      background: #1d4ed8;
+    }
 
-.download{
-margin-top:10px;
-}
+    button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
 
-@media(max-width:500px){
-.fields{
-flex-direction:column;
-}
-}
-</style>
+    .info {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f3f4f6;
+      border-radius: 10px;
+    }
+
+    #preview {
+      max-width: 100%;
+      margin-top: 25px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .content {
+      margin-top: 25px;
+      padding: 30px;
+    }
+
+    .content h2 {
+      color: #111827;
+    }
+
+    .content h3 {
+      color: #2563eb;
+      margin-top: 25px;
+    }
+
+    .faq {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .links {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      background: #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .dimensions {
+        flex-direction: column;
+      }
+
+      .field {
+        max-width: none;
+      }
+
+      .tool-card,
+      .content {
+        padding: 22px;
+      }
+
+      header h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">Tool<span>Nova</span></div>
-<a href="index.html">← Home</a>
+  <h1>🚀 ToolNova</h1>
+  <p>Free Tools for Everyone</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-<div class="box">
+  <section class="tool-card">
 
-<h1>📏 Image Resizer</h1>
+    <h2>Free Image Resizer</h2>
 
-<p class="subtitle">
-Resize your images quickly and for free.
-</p>
+    <p>
+      Resize your images online by changing their width and height.
+      Your image is processed directly in your browser.
+    </p>
 
-<label class="upload" for="file">
-📁 Choose an Image
-</label>
+    <input type="file" id="imageInput" accept="image/*">
 
-<input id="file" type="file" accept="image/*">
+    <div class="dimensions">
 
-<div class="fields">
+      <div class="field">
+        <label for="width">Width (px)</label>
+        <input type="number" id="width" min="1" placeholder="Width">
+      </div>
 
-<div>
-<label for="width">Width (px)</label>
-<input id="width" type="number" placeholder="Width">
-</div>
+      <div class="field">
+        <label for="height">Height (px)</label>
+        <input type="number" id="height" min="1" placeholder="Height">
+      </div>
 
-<div>
-<label for="height">Height (px)</label>
-<input id="height" type="number" placeholder="Height">
-</div>
+    </div>
 
-</div>
+    <button id="resizeBtn" disabled>
+      Resize Image
+    </button>
 
-<button id="resize" disabled>
-Resize Image
-</button>
+    <div class="info" id="info">
+      Choose an image to begin.
+    </div>
 
-<div id="result">
+    <img id="preview" alt="Resized image preview">
 
-<img id="preview">
+    <br>
 
-<p class="info" id="info"></p>
+    <a
+      id="downloadBtn"
+      class="download-btn"
+      style="display:none;"
+      download="resized-image.jpg"
+    >
+      Download Resized Image
+    </a>
 
-<a id="download" class="download">
-⬇️ Download Resized Image
-</a>
+  </section>
 
-</div>
+  <section class="content">
 
-</div>
-</div>
+    <h2>Resize Images Online for Free</h2>
+
+    <p>
+      ToolNova's free image resizer lets you change the width and height
+      of an image quickly and easily. It can be useful for websites,
+      social media, online forms, profile pictures, documents, and
+      other situations where a specific image size is required.
+    </p>
+
+    <p>
+      Select an image, enter the desired width and height in pixels,
+      then click the Resize Image button. You can preview and download
+      the resized image when processing is complete.
+    </p>
+
+    <h3>How to Resize an Image</h3>
+
+    <p>
+      1. Select an image from your device.
+    </p>
+
+    <p>
+      2. Enter the required width in pixels.
+    </p>
+
+    <p>
+      3. Enter the required height in pixels.
+    </p>
+
+    <p>
+      4. Click <strong>Resize Image</strong>.
+    </p>
+
+    <p>
+      5. Preview and download your resized image.
+    </p>
+
+    <h3>Why Resize an Image?</h3>
+
+    <p>
+      Different websites and applications often require images to have
+      specific dimensions. Resizing an image can help you prepare photos
+      for websites, social media profiles, forms, documents, and other
+      digital uses.
+    </p>
+
+    <h3>Browser-Based Image Resizing</h3>
+
+    <p>
+      This tool processes your selected image directly in your browser.
+      The image does not need to be uploaded to a server for resizing.
+      This provides a simple and convenient way to resize images online.
+    </p>
+
+    <div class="faq">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <strong>Is the image resizer free?</strong>
+        <p>
+          Yes. ToolNova's image resizer is free to use.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I resize JPG images?</strong>
+        <p>
+          Yes. You can select JPG and other common image formats
+          supported by your browser.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I enter custom dimensions?</strong>
+        <p>
+          Yes. You can enter your preferred width and height in pixels.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Are my images uploaded to a server?</strong>
+        <p>
+          No. The image resizing is performed directly in your browser.
+        </p>
+      </div>
+
+    </div>
+
+    <h2>More Free Tools</h2>
+
+    <div class="links">
+      <a href="compressor.html">Image Compressor</a>
+      <a href="qr.html">QR Generator</a>
+      <a href="password.html">Password Generator</a>
+      <a href="percentage.html">Percentage Calculator</a>
+      <a href="age.html">Age Calculator</a>
+      <a href="counter.html">Word Counter</a>
+      <a href="converter.html">Unit Converter</a>
+      <a href="pdf.html">PDF Merger</a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <p>
+    © 2026 ToolNova. All rights reserved.
+  </p>
+
+</footer>
 
 <script>
 
-const fileInput=document.getElementById("file");
-const widthInput=document.getElementById("width");
-const heightInput=document.getElementById("height");
-const resizeBtn=document.getElementById("resize");
-const result=document.getElementById("result");
-const preview=document.getElementById("preview");
-const info=document.getElementById("info");
-const download=document.getElementById("download");
+  const imageInput = document.getElementById("imageInput");
+  const widthInput = document.getElementById("width");
+  const heightInput = document.getElementById("height");
+  const resizeBtn = document.getElementById("resizeBtn");
+  const preview = document.getElementById("preview");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const info = document.getElementById("info");
 
-let selectedFile=null;
+  let selectedImage = null;
 
-fileInput.onchange=()=>{
+  imageInput.addEventListener("change", function() {
 
-selectedFile=fileInput.files[0];
+    const file = imageInput.files[0];
 
-if(selectedFile){
+    if (!file) {
+      selectedImage = null;
+      resizeBtn.disabled = true;
+      info.textContent = "Choose an image to begin.";
+      return;
+    }
 
-resizeBtn.disabled=false;
+    if (!file.type.startsWith("image/")) {
+      selectedImage = null;
+      resizeBtn.disabled = true;
+      info.textContent = "Please select a valid image file.";
+      return;
+    }
 
-const reader=new FileReader();
+    selectedImage = file;
+    resizeBtn.disabled = false;
 
-reader.onload=e=>{
+    const reader = new FileReader();
 
-const img=new Image();
+    reader.onload = function(event) {
 
-img.onload=()=>{
+      const img = new Image();
 
-widthInput.value=img.width;
-heightInput.value=img.height;
+      img.onload = function() {
 
-};
+        widthInput.value = img.width;
+        heightInput.value = img.height;
 
-img.src=e.target.result;
+        info.innerHTML =
+          "Original dimensions: <strong>" +
+          img.width +
+          " × " +
+          img.height +
+          " px</strong><br>" +
+          "Original size: <strong>" +
+          (file.size / 1024).toFixed(2) +
+          " KB</strong>";
 
-};
+      };
 
-reader.readAsDataURL(selectedFile);
+      img.src = event.target.result;
 
-}
+    };
 
-};
+    reader.readAsDataURL(file);
 
-resizeBtn.onclick=()=>{
+    preview.style.display = "none";
+    downloadBtn.style.display = "none";
 
-if(!selectedFile)return;
+  });
 
-const width=parseInt(widthInput.value);
-const height=parseInt(heightInput.value);
+  resizeBtn.addEventListener("click", function() {
 
-if(!width || !height){
+    if (!selectedImage) {
+      return;
+    }
 
-alert("Please enter width and height.");
+    const newWidth = parseInt(widthInput.value);
+    const newHeight = parseInt(heightInput.value);
 
-return;
+    if (!newWidth || !newHeight || newWidth < 1 || newHeight < 1) {
+      info.textContent =
+        "Please enter valid width and height values.";
+      return;
+    }
 
-}
+    const reader = new FileReader();
 
-const reader=new FileReader();
+    reader.onload = function(event) {
 
-reader.onload=e=>{
+      const img = new Image();
 
-const img=new Image();
+      img.onload = function() {
 
-img.onload=()=>{
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
-const canvas=document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
 
-canvas.width=width;
-canvas.height=height;
+        ctx.drawImage(
+          img,
+          0,
+          0,
+          newWidth,
+          newHeight
+        );
 
-const ctx=canvas.getContext("2d");
+        canvas.toBlob(function(blob) {
 
-ctx.drawImage(img,0,0,width,height);
+          if (!blob) {
+            info.textContent =
+              "Resizing failed. Please try another image.";
+            return;
+          }
 
-canvas.toBlob(blob=>{
+          const url = URL.createObjectURL(blob);
 
-preview.src=URL.createObjectURL(blob);
+          preview.src = url;
+          preview.style.display = "block";
 
-info.textContent=
-"New size: "+width+" × "+height+" pixels";
+          downloadBtn.href = url;
+          downloadBtn.style.display = "inline-block";
 
-download.href=URL.createObjectURL(blob);
+          info.innerHTML =
+            "New dimensions: <strong>" +
+            newWidth +
+            " × " +
+            newHeight +
+            " px</strong><br>" +
+            "New file size: <strong>" +
+            (blob.size / 1024).toFixed(2) +
+            " KB</strong>";
 
-download.download="toolnova-resized.jpg";
+        }, "image/jpeg", 0.92);
 
-result.style.display="block";
+      };
 
-},"image/jpeg",0.90);
+      img.src = event.target.result;
 
-};
+    };
 
-img.src=e.target.result;
+    reader.readAsDataURL(selectedImage);
 
-};
-
-reader.readAsDataURL(selectedFile);
-
-};
+  });
 
 </script>
 
 </body>
-  </html>
+      </html>
