@@ -1,202 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Merger - ToolNova</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    padding:20px;
-    text-align:center;
-}
+  <title>Merge PDF Files Online Free – PDF Merger | ToolNova</title>
 
-.container{
-    max-width:550px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+  <meta name="description" content="Merge multiple PDF files into one PDF online for free with ToolNova PDF Merger. Select your PDF files, combine them, and download the merged PDF instantly.">
 
-h1{
-    color:#222;
-}
+  <meta name="keywords" content="merge PDF, PDF merger, combine PDF files, merge PDF online, free PDF merger, combine PDFs online, PDF joiner">
 
-p{
-    color:#666;
-}
+  <meta name="author" content="ToolNova">
+  <meta name="robots" content="index, follow">
 
-input{
-    width:100%;
-    box-sizing:border-box;
-    padding:12px;
-    margin:15px 0;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
+  <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/pdf.html">
 
-button{
-    padding:12px 20px;
-    margin:8px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-button:hover{
-    background:#1d4ed8;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
 
-#downloadBtn{
-    display:none;
-    background:#16a34a;
-}
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-#status{
-    margin-top:15px;
-    color:#555;
-    line-height:1.6;
-}
-</style>
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .tool-box {
+      text-align: center;
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+    }
+
+    .file-area {
+      margin: 25px auto;
+      padding: 30px 20px;
+      border: 2px dashed #9ca3af;
+      border-radius: 12px;
+      max-width: 600px;
+      background: #f9fafb;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      font-size: 15px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #status {
+      margin-top: 18px;
+      line-height: 1.6;
+    }
+
+    #downloadBtn {
+      display: none;
+      background: #16a34a;
+    }
+
+    .content-box {
+      margin-top: 25px;
+    }
+
+    .content-box h2 {
+      color: #111827;
+    }
+
+    .content-box h3 {
+      margin-top: 22px;
+    }
+
+    .content-box p,
+    .content-box li {
+      line-height: 1.7;
+    }
+
+    .tools-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tools-links a {
+      background: #eef2ff;
+      color: #1d4ed8;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 20px;
+      }
+
+      .file-area {
+        padding: 25px 15px;
+      }
+
+    }
+  </style>
 </head>
 
 <body>
 
+<header>
+
+  <h1>🚀 ToolNova</h1>
+
+  <p>Free Tools for Everyone</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
 <div class="container">
 
-<h1>PDF Merger</h1>
+  <section class="tool-box">
 
-<p>Select two or more PDF files and merge them into one PDF.</p>
+    <h2>📄 Free PDF Merger</h2>
 
-<input type="file" id="pdfFiles" accept="application/pdf" multiple>
+    <p>
+      Combine multiple PDF files into one PDF document online for free.
+    </p>
 
-<br>
+    <div class="file-area">
 
-<button onclick="mergePDFs()">Merge PDFs</button>
+      <input
+        type="file"
+        id="pdfFiles"
+        accept="application/pdf"
+        multiple
+      >
 
-<div id="status">No files selected.</div>
+      <br>
 
-<button id="downloadBtn" onclick="downloadPDF()">
-Download Merged PDF
-</button>
+      <button onclick="mergePDFs()">
+        Merge PDF Files
+      </button>
+
+      <p id="status">
+        Select two or more PDF files to get started.
+      </p>
+
+      <button id="downloadBtn">
+        Download Merged PDF
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>Merge PDF Files Online for Free</h2>
+
+    <p>
+      ToolNova's free PDF merger lets you combine multiple PDF files
+      into a single PDF document. Select your files, merge them, and
+      download the resulting PDF.
+    </p>
+
+    <h3>How to Merge PDF Files</h3>
+
+    <ol>
+      <li>Click the file selection button.</li>
+      <li>Select two or more PDF files.</li>
+      <li>Click "Merge PDF Files".</li>
+      <li>Wait for the files to be combined.</li>
+      <li>Click "Download Merged PDF".</li>
+    </ol>
+
+    <h3>PDF Merger Features</h3>
+
+    <ul>
+      <li>Free online PDF merger</li>
+      <li>Combine multiple PDF files</li>
+      <li>Simple and easy to use</li>
+      <li>No account required</li>
+      <li>No software installation required</li>
+      <li>Works on mobile and desktop browsers</li>
+    </ul>
+
+    <h3>Why Merge PDF Files?</h3>
+
+    <p>
+      Combining several PDF documents into one file can make documents
+      easier to organize, share, store, and print. It can be useful for
+      reports, applications, assignments, invoices, scanned documents,
+      and other collections of PDF files.
+    </p>
+
+    <h3>Are My PDF Files Uploaded?</h3>
+
+    <p>
+      This tool processes the selected PDF files directly in your
+      browser using JavaScript. ToolNova does not require you to
+      create an account or manually upload your files to a server.
+    </p>
+
+    <h3>Frequently Asked Questions</h3>
+
+    <h3>How many PDF files can I merge?</h3>
+
+    <p>
+      You can select multiple PDF files and combine them into one
+      document. Your browser and available device memory may affect
+      how many large files can be processed at once.
+    </p>
+
+    <h3>Is the PDF merger free?</h3>
+
+    <p>
+      Yes. ToolNova's PDF merger is free to use online.
+    </p>
+
+    <h3>Do I need to install software?</h3>
+
+    <p>
+      No. The PDF merger works directly in your web browser.
+    </p>
+
+    <h3>Can I use the PDF merger on my phone?</h3>
+
+    <p>
+      Yes. The tool is designed to work on modern mobile and desktop
+      browsers.
+    </p>
+
+  </section>
+
+  <section class="content-box">
+
+    <h2>More Free ToolNova Tools</h2>
+
+    <p>
+      Explore our other free online tools:
+    </p>
+
+    <div class="tools-links">
+
+      <a href="compressor.html">Image Compressor</a>
+
+      <a href="resizer.html">Image Resizer</a>
+
+      <a href="qr.html">QR Code Generator</a>
+
+      <a href="password.html">Password Generator</a>
+
+      <a href="percentage.html">Percentage Calculator</a>
+
+      <a href="age.html">Age Calculator</a>
+
+      <a href="counter.html">Word Counter</a>
+
+      <a href="converter.html">Unit Converter</a>
+
+    </div>
+
+  </section>
 
 </div>
 
-<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<footer>
+
+  <p>© 2026 ToolNova. All rights reserved.</p>
+
+  <p>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </p>
+
+</footer>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
 <script>
 
-let mergedPDF = null;
+async function mergePDFs() {
 
-document.getElementById("pdfFiles").addEventListener("change", function(){
+  const fileInput =
+    document.getElementById("pdfFiles");
 
-    const files = this.files;
-
-    if(files.length === 0){
-        document.getElementById("status").textContent =
-        "No files selected.";
-        return;
-    }
-
-    document.getElementById("status").textContent =
-    files.length + " PDF file(s) selected.";
-
-});
-
-async function mergePDFs(){
-
-    const files =
-    document.getElementById("pdfFiles").files;
-
-    const status =
+  const status =
     document.getElementById("status");
 
-    const downloadBtn =
+  const downloadBtn =
     document.getElementById("downloadBtn");
 
-    if(files.length < 2){
-        status.textContent =
-        "Please select at least 2 PDF files.";
-        return;
+  const files =
+    Array.from(fileInput.files);
+
+  downloadBtn.style.display = "none";
+
+  if (files.length < 2) {
+
+    status.textContent =
+      "Please select at least two PDF files.";
+
+    return;
+  }
+
+  try {
+
+    status.textContent =
+      "Merging PDF files... Please wait.";
+
+    const mergedPdf =
+      await PDFLib.PDFDocument.create();
+
+    for (const file of files) {
+
+      const arrayBuffer =
+        await file.arrayBuffer();
+
+      const pdf =
+        await PDFLib.PDFDocument.load(arrayBuffer);
+
+      const pages =
+        await mergedPdf.copyPages(
+          pdf,
+          pdf.getPageIndices()
+        );
+
+      pages.forEach(page => {
+        mergedPdf.addPage(page);
+      });
+
     }
 
-    try{
-
-        status.textContent = "Merging PDFs... Please wait.";
-        downloadBtn.style.display = "none";
-
-        const mergedDoc = await PDFLib.PDFDocument.create();
-
-        for(const file of files){
-
-            const bytes = await file.arrayBuffer();
-
-            const pdf =
-            await PDFLib.PDFDocument.load(bytes);
-
-            const pages =
-            await mergedDoc.copyPages(
-                pdf,
-                pdf.getPageIndices()
-            );
-
-            pages.forEach(page => {
-                mergedDoc.addPage(page);
-            });
-        }
-
-        mergedPDF =
-        await mergedDoc.save();
-
-        status.textContent =
-        "PDFs merged successfully!";
-
-        downloadBtn.style.display =
-        "inline-block";
-
-    }catch(error){
-
-        status.textContent =
-        "Error: Please make sure all selected files are valid PDFs.";
-
-        console.error(error);
-    }
-}
-
-function downloadPDF(){
-
-    if(!mergedPDF){
-        return;
-    }
+    const mergedBytes =
+      await mergedPdf.save();
 
     const blob =
-    new Blob([mergedPDF], {
-        type:"application/pdf"
-    });
+      new Blob(
+        [mergedBytes],
+        { type: "application/pdf" }
+      );
 
     const url =
-    URL.createObjectURL(blob);
+      URL.createObjectURL(blob);
 
-    const link =
-    document.createElement("a");
+    downloadBtn.onclick = function() {
 
-    link.href = url;
-    link.download = "toolnova-merged.pdf";
+      const link =
+        document.createElement("a");
 
-    link.click();
+      link.href = url;
+      link.download = "ToolNova-Merged.pdf";
 
-    URL.revokeObjectURL(url);
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+    };
+
+    downloadBtn.style.display = "inline-block";
+
+    status.textContent =
+      files.length +
+      " PDF files merged successfully!";
+
+  } catch (error) {
+
+    console.error(error);
+
+    status.textContent =
+      "Unable to merge the PDF files. Please make sure the selected files are valid PDFs.";
+
+  }
+
 }
 
 </script>
 
 </body>
-</html>
+    </html>
