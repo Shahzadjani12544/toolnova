@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Free Online Tools - ToolNova | Fast & Easy Tools</title>
+  <title>ToolNova — Free Online Tools for Everyday Tasks</title>
 
-  <meta name="description" content="ToolNova provides free online tools for image compression, resizing, PDF merging, QR codes, passwords, calculations, text counting and unit conversion.">
+  <meta name="description" content="ToolNova offers fast, simple and free online tools for images, PDFs, calculations, text, QR codes and more. No installation required.">
 
-  <meta name="keywords" content="free online tools, image compressor, image resizer, PDF merger, QR code generator, password generator, percentage calculator, age calculator, word counter, unit converter">
+  <meta name="keywords" content="free online tools, image compressor, image resizer, PDF merger, QR generator, password generator, calculator, word counter, unit converter">
 
   <meta name="author" content="ToolNova">
-
   <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://shahzadjani12544.github.io/toolnova/">
 
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#0f172a">
 
   <style>
     * {
@@ -26,273 +24,555 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, Helvetica, sans-serif;
       background: #f8fafc;
-      color: #1e293b;
+      color: #0f172a;
       line-height: 1.6;
     }
 
-    header {
-      background: #2563eb;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    a {
+      text-decoration: none;
     }
 
-    header h2 {
-      font-size: 28px;
-      margin-bottom: 4px;
-    }
+    /* NAVBAR */
 
-    header p {
-      font-size: 15px;
-      opacity: 0.95;
-    }
-
-    .hero {
-      background: white;
-      text-align: center;
-      padding: 55px 20px 45px;
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid #e2e8f0;
     }
 
-    .hero h1 {
-      font-size: 42px;
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       color: #0f172a;
-      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      font-size: 21px;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #475569;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-button {
+      background: #0f172a !important;
+      color: white !important;
+      padding: 10px 16px;
+      border-radius: 10px;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(37,99,235,0.14), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(124,58,237,0.13), transparent 30%),
+        #ffffff;
+      padding: 90px 20px 80px;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      font-weight: 850;
+      color: #0f172a;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
       max-width: 700px;
-      margin: auto;
-      color: #475569;
+      margin: 24px auto 0;
+      color: #64748b;
       font-size: 18px;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 30px;
+    .primary-btn,
+    .secondary-btn {
+      padding: 13px 21px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 750;
+      transition: 0.2s ease;
+    }
+
+    .primary-btn {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.22);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: #1d4ed8;
+    }
+
+    .secondary-btn {
+      background: white;
       color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+
+    .secondary-btn:hover {
+      background: #f8fafc;
+      transform: translateY(-2px);
+    }
+
+    /* SEARCH */
+
+    .search-wrap {
+      max-width: 700px;
+      margin: -30px auto 0;
+      position: relative;
+      z-index: 10;
+      padding: 0 20px;
+    }
+
+    .search-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 7px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 15px 45px rgba(15,23,42,0.10);
+    }
+
+    .search-icon {
+      padding: 0 13px;
+      font-size: 19px;
+    }
+
+    #toolSearch {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      font-size: 15px;
+      padding: 13px 8px;
+      color: #0f172a;
+      background: transparent;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: 34px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+      font-size: 16px;
     }
 
     .category {
-      margin-bottom: 45px;
+      margin-bottom: 55px;
     }
 
-    .category h2 {
-      font-size: 24px;
-      margin-bottom: 18px;
-      color: #1d4ed8;
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      margin-bottom: 20px;
     }
 
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     .tool-card {
       background: white;
-      padding: 24px;
-      border-radius: 14px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 17px;
+      padding: 25px;
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      opacity: 0;
+      transition: 0.25s ease;
     }
 
     .tool-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.1);
+      transform: translateY(-5px);
+      border-color: #cbd5e1;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.09);
+    }
+
+    .tool-card:hover::before {
+      opacity: 1;
     }
 
     .tool-icon {
-      font-size: 38px;
-      margin-bottom: 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      font-size: 25px;
+      margin-bottom: 17px;
     }
 
     .tool-card h3 {
-      font-size: 21px;
-      margin-bottom: 9px;
-      color: #0f172a;
+      font-size: 19px;
+      margin-bottom: 8px;
     }
 
     .tool-card p {
       color: #64748b;
-      font-size: 15px;
+      font-size: 14px;
+      min-height: 67px;
       margin-bottom: 18px;
     }
 
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: bold;
+    .tool-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #2563eb;
       font-size: 14px;
+      font-weight: 750;
     }
 
-    .btn:hover {
-      background: #1d4ed8;
+    .tool-link:hover {
+      color: #1d4ed8;
     }
 
-    .why {
-      background: white;
-      padding: 45px 20px;
-      border-top: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
+    /* FEATURES */
+
+    .features {
+      background: #0f172a;
+      color: white;
+      padding: 75px 22px;
     }
 
-    .why-content {
-      max-width: 1000px;
+    .features-inner {
+      max-width: 1180px;
       margin: auto;
     }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .why-box {
+    .features-heading {
       text-align: center;
-      padding: 20px;
+      margin-bottom: 42px;
     }
 
-    .why-box .icon {
+    .features-heading h2 {
       font-size: 34px;
       margin-bottom: 10px;
     }
 
-    .why-box h3 {
-      margin-bottom: 7px;
-      color: #0f172a;
+    .features-heading p {
+      color: #94a3b8;
     }
 
-    .why-box p {
-      color: #64748b;
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-box {
+      padding: 25px;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      background: #111c31;
+    }
+
+    .feature-box .icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .feature-box h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .feature-box p {
+      color: #94a3b8;
       font-size: 14px;
     }
 
-    .info-section {
+    /* INFO */
+
+    .info {
       max-width: 900px;
-      margin: 45px auto;
-      padding: 0 20px;
+      margin: auto;
+      padding: 75px 22px 35px;
     }
 
-    .info-section h2 {
+    .info h2 {
+      font-size: 31px;
+      margin-bottom: 18px;
       text-align: center;
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #0f172a;
     }
 
-    .info-section p {
-      color: #475569;
-      margin-bottom: 15px;
+    .info p {
+      color: #64748b;
+      margin-bottom: 16px;
+      font-size: 15px;
     }
+
+    /* FAQ */
 
     .faq {
       max-width: 900px;
       margin: auto;
-      padding: 45px 20px;
+      padding: 40px 22px 80px;
     }
 
     .faq h2 {
       text-align: center;
-      font-size: 30px;
-      margin-bottom: 25px;
-      color: #0f172a;
+      font-size: 31px;
+      margin-bottom: 28px;
     }
 
     details {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 17px 19px;
+      margin-bottom: 11px;
     }
 
     summary {
       cursor: pointer;
-      font-weight: bold;
-      color: #1e293b;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     details p {
-      margin-top: 10px;
       color: #64748b;
+      font-size: 14px;
+      margin-top: 10px;
     }
+
+    /* FOOTER */
 
     footer {
-      background: #0f172a;
+      background: #020617;
       color: white;
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 20px;
+      padding: 45px 22px 30px;
     }
 
-    footer p {
-      color: #cbd5e1;
-      margin-bottom: 15px;
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 380px;
+    }
+
+    .footer-brand h2 {
+      margin-bottom: 9px;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      font-size: 14px;
     }
 
     .footer-links {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 18px;
+      align-items: center;
     }
 
     .footer-links a {
-      color: #93c5fd;
-      text-decoration: none;
+      color: #cbd5e1;
+      font-size: 14px;
     }
 
     .footer-links a:hover {
-      text-decoration: underline;
+      color: white;
     }
 
-    @media (max-width: 850px) {
+    .copyright {
+      max-width: 1180px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* SEARCH RESULT */
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
       .tools-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .why-grid {
+      .feature-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        gap: 12px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .nav-inner {
+        padding: 13px 16px;
+      }
+
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 18px 65px;
+      }
+
       .hero h1 {
-        font-size: 32px;
+        letter-spacing: -1.5px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
+      .container {
+        padding: 60px 17px;
+      }
+
       .tools-grid {
         grid-template-columns: 1fr;
       }
 
-      .why-grid {
+      .feature-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title,
-      .info-section h2,
+      .section-heading h2,
+      .features-heading h2,
+      .info h2,
       .faq h2 {
-        font-size: 26px;
+        font-size: 27px;
+      }
+
+      .tool-card p {
+        min-height: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
   </style>
@@ -300,279 +580,341 @@
 
 <body>
 
-  <header>
-    <h2>🚀 ToolNova</h2>
-    <p>Free Tools for Everyone</p>
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+    <div class="nav-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-icon">✦</span>
+        ToolNova
+      </a>
+
+      <div class="nav-links">
+        <a href="#tools">Tools</a>
+        <a href="#why">Why ToolNova</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="badge">
+      ⚡ Fast • Free • Browser-Based
+    </div>
+
+    <h1>
+      Powerful tools for your
+      <span>everyday tasks.</span>
+    </h1>
+
+    <p>
+      Compress images, merge PDFs, generate QR codes, calculate percentages,
+      create passwords and more — all from one simple platform.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#tools" class="primary-btn">Explore Tools →</a>
+      <a href="#why" class="secondary-btn">Why ToolNova?</a>
+    </div>
+
   </header>
 
-  <section class="hero">
-    <h1>Free Online Tools</h1>
-    <p>
-      Simple, fast and useful online tools for images, PDFs, calculations,
-      text, passwords, QR codes and everyday tasks.
-    </p>
-  </section>
+  <!-- SEARCH -->
 
-  <main class="container">
+  <div class="search-wrap">
 
-    <h2 class="section-title">Explore Our Free Tools</h2>
+    <div class="search-box">
+      <span class="search-icon">🔎</span>
+      <input
+        type="search"
+        id="toolSearch"
+        placeholder="Search a tool... e.g. PDF, image, password"
+        onkeyup="searchTools()"
+      >
+    </div>
 
-    <!-- Image Tools -->
+  </div>
+
+  <!-- TOOLS -->
+
+  <main class="container" id="tools">
+
+    <div class="section-heading">
+      <h2>Explore Free Tools</h2>
+      <p>Simple utilities designed to get the job done quickly.</p>
+    </div>
+
+    <!-- IMAGE TOOLS -->
+
     <section class="category">
-      <h2>🖼️ Image Tools</h2>
+
+      <h2 class="category-title">🖼️ Image Tools</h2>
 
       <div class="tools-grid">
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="image compressor compress photo image size">
           <div class="tool-icon">🗜️</div>
           <h3>Image Compressor</h3>
-          <p>
-            Reduce image file size quickly while keeping good image quality.
-          </p>
-          <a class="btn" href="compressor.html">Use Tool</a>
+          <p>Reduce image file size while keeping your images looking great.</p>
+          <a href="compressor.html" class="tool-link">Open Compressor →</a>
         </article>
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="image resizer resize photo width height">
           <div class="tool-icon">📐</div>
           <h3>Image Resizer</h3>
-          <p>
-            Resize images to your desired width and height directly in your browser.
-          </p>
-          <a class="btn" href="resizer.html">Use Tool</a>
+          <p>Resize images to your preferred width and height directly in your browser.</p>
+          <a href="resizer.html" class="tool-link">Open Resizer →</a>
         </article>
 
       </div>
+
     </section>
 
-    <!-- Calculator Tools -->
+    <!-- CALCULATORS -->
+
     <section class="category">
-      <h2>🧮 Calculator & Converter Tools</h2>
+
+      <h2 class="category-title">🧮 Calculators & Converters</h2>
 
       <div class="tools-grid">
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="percentage calculator percent math calculation">
           <div class="tool-icon">📊</div>
           <h3>Percentage Calculator</h3>
-          <p>
-            Quickly calculate percentages for school, work, shopping and daily use.
-          </p>
-          <a class="btn" href="percentage.html">Use Tool</a>
+          <p>Calculate percentages quickly for school, work, shopping and daily tasks.</p>
+          <a href="percentage.html" class="tool-link">Calculate Now →</a>
         </article>
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="age calculator birthday date age">
           <div class="tool-icon">🎂</div>
           <h3>Age Calculator</h3>
-          <p>
-            Calculate your exact age in years, months and days from your date of birth.
-          </p>
-          <a class="btn" href="age.html">Use Tool</a>
+          <p>Calculate age from a date of birth in years, months and days.</p>
+          <a href="age.html" class="tool-link">Calculate Age →</a>
         </article>
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="unit converter length weight temperature conversion">
           <div class="tool-icon">🔄</div>
           <h3>Unit Converter</h3>
-          <p>
-            Convert common length, weight and temperature units quickly and easily.
-          </p>
-          <a class="btn" href="converter.html">Use Tool</a>
+          <p>Convert common length, weight and temperature units with ease.</p>
+          <a href="converter.html" class="tool-link">Convert Units →</a>
         </article>
 
       </div>
+
     </section>
 
-    <!-- Text & Security -->
+    <!-- TEXT & SECURITY -->
+
     <section class="category">
-      <h2>📝 Text & Security Tools</h2>
+
+      <h2 class="category-title">📝 Text & Security</h2>
 
       <div class="tools-grid">
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="word counter character counter text words sentence">
           <div class="tool-icon">🔢</div>
           <h3>Word & Character Counter</h3>
-          <p>
-            Count words, characters, sentences and characters without spaces.
-          </p>
-          <a class="btn" href="counter.html">Use Tool</a>
+          <p>Count words, characters, sentences and characters without spaces.</p>
+          <a href="counter.html" class="tool-link">Count Text →</a>
         </article>
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="password generator secure random password security">
           <div class="tool-icon">🔐</div>
           <h3>Password Generator</h3>
-          <p>
-            Generate strong random passwords with customizable length and characters.
-          </p>
-          <a class="btn" href="password.html">Use Tool</a>
+          <p>Create strong random passwords with customizable options.</p>
+          <a href="password.html" class="tool-link">Generate Password →</a>
         </article>
 
       </div>
+
     </section>
 
     <!-- PDF & QR -->
+
     <section class="category">
-      <h2>📄 PDF & QR Tools</h2>
+
+      <h2 class="category-title">📄 PDF & QR Tools</h2>
 
       <div class="tools-grid">
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="pdf merger merge combine pdf files">
           <div class="tool-icon">📑</div>
           <h3>PDF Merger</h3>
-          <p>
-            Combine multiple PDF files into one PDF directly in your browser.
-          </p>
-          <a class="btn" href="pdf.html">Use Tool</a>
+          <p>Combine multiple PDF files into a single PDF directly in your browser.</p>
+          <a href="pdf.html" class="tool-link">Merge PDFs →</a>
         </article>
 
-        <article class="tool-card">
+        <article class="tool-card" data-search="qr code generator qr barcode link text">
           <div class="tool-icon">📱</div>
           <h3>QR Code Generator</h3>
-          <p>
-            Create QR codes for links, text and other useful information.
-          </p>
-          <a class="btn" href="qr.html">Use Tool</a>
+          <p>Create QR codes for links, text and other useful information.</p>
+          <a href="qr.html" class="tool-link">Create QR Code →</a>
         </article>
 
       </div>
+
     </section>
 
   </main>
 
-  <!-- Why ToolNova -->
-  <section class="why">
-    <div class="why-content">
+  <!-- WHY TOOLNOVA -->
 
-      <h2 class="section-title">Why Use ToolNova?</h2>
+  <section class="features" id="why">
 
-      <div class="why-grid">
+    <div class="features-inner">
 
-        <div class="why-box">
+      <div class="features-heading">
+        <h2>Why use ToolNova?</h2>
+        <p>Everything you need for common digital tasks, in one place.</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-box">
           <div class="icon">🆓</div>
           <h3>Free to Use</h3>
-          <p>
-            Access our everyday online tools without paying for basic use.
-          </p>
+          <p>Access useful tools without unnecessary signup or complicated steps.</p>
         </div>
 
-        <div class="why-box">
+        <div class="feature-box">
           <div class="icon">⚡</div>
           <h3>Fast & Simple</h3>
-          <p>
-            Our tools are designed to be easy to understand and quick to use.
-          </p>
+          <p>Clean interfaces designed to help you finish tasks quickly.</p>
         </div>
 
-        <div class="why-box">
+        <div class="feature-box">
           <div class="icon">📱</div>
           <h3>Mobile Friendly</h3>
-          <p>
-            ToolNova works across phones, tablets and desktop browsers.
-          </p>
+          <p>Use ToolNova comfortably on phones, tablets and desktop devices.</p>
         </div>
 
-        <div class="why-box">
-          <div class="icon">🌐</div>
-          <h3>Available Online</h3>
-          <p>
-            No software installation is required for our browser-based tools.
-          </p>
+        <div class="feature-box">
+          <div class="icon">🔒</div>
+          <h3>Browser-Based</h3>
+          <p>Many tools can process tasks directly in your web browser.</p>
         </div>
 
       </div>
+
     </div>
+
   </section>
 
-  <!-- About ToolNova -->
-  <section class="info-section">
+  <!-- ABOUT -->
 
-    <h2>About ToolNova</h2>
+  <section class="info">
+
+    <h2>A growing collection of useful online tools</h2>
 
     <p>
-      ToolNova is a collection of free online tools designed to make everyday
-      digital tasks easier. Whether you need to compress an image, resize a
-      picture, merge PDF files, generate a QR code or calculate a percentage,
-      ToolNova provides simple browser-based solutions.
+      ToolNova is designed to make everyday digital tasks faster and easier.
+      Instead of searching for a different website for every small task,
+      you can access useful utilities from one convenient platform.
     </p>
 
     <p>
-      Our goal is to build useful tools that are easy to access from anywhere,
-      including mobile phones, tablets and computers.
+      Our tools cover image processing, PDF utilities, calculations,
+      text analysis, security and QR codes. We aim to keep every tool
+      simple, fast and easy to understand.
     </p>
 
     <p>
-      Many ToolNova tools process your files directly in your browser. This can
-      help you complete common tasks without installing additional software.
+      ToolNova is continuously evolving, with more useful tools planned
+      for the future.
     </p>
 
   </section>
 
   <!-- FAQ -->
+
   <section class="faq">
 
     <h2>Frequently Asked Questions</h2>
 
     <details>
-      <summary>Is ToolNova free to use?</summary>
-      <p>
-        Yes. ToolNova provides free online tools for common digital tasks.
-      </p>
+      <summary>Is ToolNova free?</summary>
+      <p>Yes. ToolNova provides free online tools for common digital tasks.</p>
     </details>
 
     <details>
       <summary>Do I need to install software?</summary>
+      <p>No. ToolNova tools are designed to work through a modern web browser.</p>
+    </details>
+
+    <details>
+      <summary>Can I use ToolNova on my phone?</summary>
+      <p>Yes. The website is designed to work on smartphones, tablets and desktop computers.</p>
+    </details>
+
+    <details>
+      <summary>Can I use ToolNova without creating an account?</summary>
+      <p>Yes. The current tools can be accessed without creating an account.</p>
+    </details>
+
+    <details>
+      <summary>Are my files uploaded to a server?</summary>
       <p>
-        No. ToolNova tools are designed to work through a modern web browser.
+        Some tools process files directly in your browser. Processing can vary
+        by tool, so review the individual tool page before using sensitive files.
       </p>
     </details>
 
     <details>
-      <summary>Can I use ToolNova on my mobile phone?</summary>
-      <p>
-        Yes. The website is designed to work on smartphones, tablets and desktop
-        computers.
-      </p>
-    </details>
-
-    <details>
-      <summary>Are my images uploaded to a server?</summary>
-      <p>
-        Several image tools process files directly inside your browser. The
-        exact processing method can vary by tool, so please review the relevant
-        tool page before using it for sensitive files.
-      </p>
-    </details>
-
-    <details>
-      <summary>Can I merge multiple PDF files?</summary>
-      <p>
-        Yes. The ToolNova PDF Merger allows you to select multiple PDF files and
-        combine them into a single PDF.
-      </p>
-    </details>
-
-    <details>
-      <summary>How can I contact ToolNova?</summary>
-      <p>
-        You can contact us through our Contact Us page.
-      </p>
+      <summary>Will more tools be added?</summary>
+      <p>Yes. ToolNova is being developed as a growing collection of useful online utilities.</p>
     </details>
 
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
+
   <footer>
 
-    <p>
-      © 2026 ToolNova. Free Tools for Everyone.
-    </p>
+    <div class="footer-inner">
 
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
-      <a href="contact.html">Contact Us</a>
+      <div class="footer-brand">
+        <h2>✦ ToolNova</h2>
+        <p>
+          Fast, simple and useful online tools for everyday digital tasks.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 ToolNova. All rights reserved.
     </div>
 
   </footer>
 
-</body>
-              </html>
+  <!-- SEARCH SCRIPT -->
+
+  <script>
+    function searchTools() {
+
+      const input = document
+        .getElementById("toolSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+      const cards = document.querySelectorAll(".tool-card");
+
+      cards.forEach(function(card) {
+
+        const text = card.innerText.toLowerCase();
+        const keywords = card.dataset.search.to
